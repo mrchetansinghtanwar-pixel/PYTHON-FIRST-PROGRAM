@@ -1,3 +1,6 @@
+from numpy import number
+
+
 f = open("demo.txt","r+")
 #data = f.read(5)
 #print(data)
@@ -85,7 +88,26 @@ def check_for_line():
     return -1
 
 check_for_line()
+count = 0
+with open("simple.txt", "r") as i:
+    data = i.read()
+    print(data)
+    
+    num = ""
+    for j in range(len(data)):
+        if(data[j] == ","):
+            print(num)
+            num = ""
+        else:
+            num += data[j]
             
+    number = data.split(",")
+    for val in number:
+         if(int(val) % 2 == 0):
+                count += 1
+                
+print("Total even numbers are: ", count)
+
             
             
             
